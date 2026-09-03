@@ -7,33 +7,29 @@
 #☐  (200 g + 1 oz) × 2
 
 from kitchen import Quantity
-#A1 -> 3
+#after add g and oz
 def test_multiplication():
-    flour = Quantity(200)
+    flour = Quantity(200, "g")
     result = flour.times(3)
     assert result.amount == 600
-#A1  
+#after add g and oz
 def test_multiplication_by_two():
-    flour = Quantity(200)
-    flour.times(2)
-    assert flour.amount == 400
-
-#A2 -> A3
-def test_multiplication_by_two():
-    flour = Quantity(200)
+    flour = Quantity(200, "g")
     result = flour.times(2)
     assert result.amount == 400
 
-#A3
+#after add g and oz
 def test_multiplication_returns_a_new_quantity():
-    flour = Quantity(200)
+    flour = Quantity(200, "g")
     assert flour.times(3).amount == 600
     assert flour.times(2).amount == 400
 
-#A4
+
+
+##after add g and oz
 def test_equality():
-    assert Quantity(200) == Quantity(200)
-    assert Quantity(200) != Quantity(300)
+    assert Quantity(200, "g") == Quantity(200, "g")
+    assert Quantity(200, "g") != Quantity(300, "g")
 
 #A5
 def test_grams_are_not_ounces():
