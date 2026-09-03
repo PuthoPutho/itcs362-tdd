@@ -12,3 +12,19 @@ class Quantity:
  
     def __repr__(self):
         return f"Quantity({self.amount}, {self.unit!r})"
+    
+    def plus(self, other):
+        return Sum(self, other)
+
+class Sum:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def reduce(self, unit):
+        return Quantity(self.left.amount + self.right.amount, unit)
+
+
+class Converter:
+    def reduce(self, quantity, unit):
+        return quantity.reduce(unit)

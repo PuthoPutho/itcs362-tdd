@@ -6,7 +6,12 @@
 #☐ 200 g + 1 oz แปลง​ผลลัพธ์​เป็น​กรัม​โดย​ใช้​อัตรา​แปลง​หน่วย
 #☐  (200 g + 1 oz) × 2
 
-from kitchen import Quantity
+from kitchen import Quantity, Converter
+def grams(amount):
+    return Quantity(amount, "g")
+
+def ounces(amount):
+    return Quantity(amount, "oz")
 #after add g and oz
 def test_multiplication():
     flour = Quantity(200, "g")
